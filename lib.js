@@ -41,7 +41,7 @@ const error = function (str) {
 const configPath = path.join(cwd, '.deploy.yml')
 
 if (fs.existsSync(configPath)) {
-  const localConfig = yml.safeLoad(fs.readFileSync(configPath, 'utf8'))
+  const localConfig = yml.load(fs.readFileSync(configPath, 'utf8'))
   if (localConfig) {
     Object.assign(config, localConfig)
   }
