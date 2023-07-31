@@ -23,6 +23,8 @@ const config = {
   startCommand: 'service nginx start',
   reloadCommand: 'nginx -s reload',
   nginxConfig: 'nginx.conf',
+  stdout: '/home/logs/master-stdout.log',
+  stderr: '/home/logs/master-stderr.log',
   waitStopTime: 5000
 }
 
@@ -136,9 +138,9 @@ names.forEach(name => {
 
     // start backend
     info(`[deploy info] start backend:${instance.title};`)
-    let eggScripts = `npx egg-scripts start --ignore-stderr --daemon --title=${instance.title} --port=${instance.port}`
+    let eggScripts = `npx egg-scripts start --ignore-stderr --daemon --title=${instance.title} --port=${instance.port} --stdout=${config.stdout}} --stderr=${config.stderr}`
     if (config.workers) {
-      eggScripts = `npx egg-scripts start --ignore-stderr --workers=${config.workers} --daemon --title=${instance.title} --port=${instance.port}`
+      eggScripts = `npx egg-scripts start --ignore-stderr --workers=${config.workers} --daemon --title=${instance.title} --port=${instance.port} --stdout=${config.stdout}} --stderr=${config.stderr}`
     }
     console.log('command: ', eggScripts)
     const start = shell.exec(eggScripts)
