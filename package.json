@@ -1,6 +1,6 @@
 {
   "name": "egg-deploy-safe",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "hot-reload egg.js application",
   "main": "lib.js",
   "scripts": {

@@ -59,8 +59,7 @@ startCommand: service nginx start # nginx 启动命令，运行时若 nginx 未�
 reloadCommand: nginx -s reload # nginx reload 命令
 nginxConfig: nginx.conf # nginx 配置地址，可以是绝对地址，如果放置于项目下，记得在 nginx 全局配置里 include
 waitStopTime: 5000 # 停止前的等待时间
-stdout: /home/logs/master-stdout.log # console.log输出地址
-stderr: /home/logs/master-stderr.log # console.error输出地址
+logFolder: /home/logs # 日志输出地址
 ```
 
 ## todo
