@@ -138,9 +138,9 @@ names.forEach(name => {
 
     // start backend
     info(`[deploy info] start backend:${instance.title};`)
-    let eggScripts = `npx egg-scripts start --ignore-stderr --daemon --title=${instance.title} --port=${instance.port} --stdout=${config.stdout}} --stderr=${config.stderr}`
+    let eggScripts = `npx egg-scripts start --ignore-stderr --daemon --title=${instance.title} --port=${instance.port} --stdout=${config.stdout} --stderr=${config.stderr}`
     if (config.workers) {
-      eggScripts = `npx egg-scripts start --ignore-stderr --workers=${config.workers} --daemon --title=${instance.title} --port=${instance.port} --stdout=${config.stdout}} --stderr=${config.stderr}`
+      eggScripts = `npx egg-scripts start --ignore-stderr --workers=${config.workers} --daemon --title=${instance.title} --port=${instance.port} --stdout=${config.stdout} --stderr=${config.stderr}`
     }
     console.log('command: ', eggScripts)
     const start = shell.exec(eggScripts)
